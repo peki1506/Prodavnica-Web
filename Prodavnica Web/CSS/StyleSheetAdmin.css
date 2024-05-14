@@ -1,0 +1,40 @@
+﻿/* Resetting default margin and padding */
+body, h1, h2, h3, p, ul, li {
+    margin: 0;
+    padding: 0;
+}
+.wrapper{
+    /*margin-top: 77.6px;*/
+    margin-bottom: 38.4px;
+}
+
+/* Styling header */
+.header {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Styling footer */
+.footer {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+}
+
+/* Styling content area */
+.content {
+    padding: 20px;
+}
+
+/* Centering the content */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}

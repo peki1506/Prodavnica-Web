@@ -1,0 +1,17 @@
+﻿body {
+}
+/* Centering the content */
+#ContentPlaceHolder1 {
+    text-align: center;
+}
+
+/* Style for dropdown lists */
+#DropDownListPol, #DropDownListVrsta {
+    padding: 10px; /* Adjust padding as needed */
+    margin: 10px; /* Adjust margin as needed */
+    border: 1px solid #ccc; /* Add a border */
+    border-radius: 5px; /* Add rounded corners */
+    background-color: #f9f9f9; /* Background color */
+    font-size: 16px; /* Font size */
+    width: 200px; /* Set width as desired */
+}

@@ -1,0 +1,121 @@
+﻿* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f5f5f5; /* Changed background color */
+}
+
+.wrapper {
+    position: relative;
+    max-width: 400px; /* Adjusted maximum width */
+    width: 100%;
+    background: #fff;
+    padding: 40px; /* Increased padding */
+    border-radius: 10px; /* Increased border radius */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); /* Soft shadow */
+}
+
+    .wrapper h2 {
+        font-size: 24px;
+        font-weight: 700;
+        color: #333;
+        margin-bottom: 20px; /* Added margin */
+    }
+
+        .wrapper h2::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -10px; /* Adjusted position */
+            height: 4px; /* Increased height */
+            width: 50px; /* Increased width */
+            background: #4070f4;
+            border-radius: 8px; /* Rounded corners */
+        }
+
+    .wrapper form .input-box {
+        margin-bottom: 20px; /* Added margin */
+    }
+
+form .input-box input {
+    height: 48px; /* Adjusted height */
+    width: 100%;
+    outline: none;
+    padding: 0 15px;
+    font-size: 16px; /* Decreased font size */
+    font-weight: 400;
+    color: #333;
+    border: 1px solid #ddd; /* Soft border */
+    border-radius: 6px;
+    transition: border-color 0.3s ease; /* Smooth transition */
+}
+
+.input-box input:focus,
+.input-box input:valid {
+    border-color: #4070f4;
+}
+
+.form-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px; /* Added margin */
+}
+
+    .form-group label {
+        margin-right: 10px; /* Added margin */
+        font-weight: 500;
+        color: #555;
+    }
+
+.policy {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px; /* Added margin */
+}
+
+    .policy h3 {
+        font-size: 14px; /* Decreased font size */
+        font-weight: 500;
+        color: #555;
+        margin-left: 10px; /* Added margin */
+    }
+
+.input-box.button input {
+    height: 48px; /* Adjusted height */
+    width: 100%;
+    color: #fff;
+    letter-spacing: 1px;
+    border: none;
+    background: #4070f4;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Smooth transition */
+}
+
+    .input-box.button input:hover {
+        background: #0e4bf1;
+    }
+
+.form-group.text h3 {
+    font-size: 14px; /* Decreased font size */
+    font-weight: 500;
+    color: #555;
+    text-align: center;
+}
+
+    .form-group.text h3 a {
+        color: #4070f4;
+        text-decoration: none;
+    }
+
+        .form-group.text h3 a:hover {
+            text-decoration: underline;
+        }
