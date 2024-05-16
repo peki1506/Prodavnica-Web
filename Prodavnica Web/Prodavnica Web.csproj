@@ -71,6 +71,8 @@
     <Content Include="CSS\StyleSheetAdmin.css" />
     <Content Include="Prodavnica.aspx" />
     <Content Include="CSS\StyleSheetProdavnica.css" />
+    <Content Include="CSS\StyleSheet1.css" />
+    <Content Include="CSS\StyleSheet2.css" />
     <Content Include="Web.config" />
     <Content Include="Login.aspx" />
   </ItemGroup>

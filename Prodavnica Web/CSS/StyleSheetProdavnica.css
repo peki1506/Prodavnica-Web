@@ -6,7 +6,7 @@
 }
 
 /* Style for dropdown lists */
-#DropDownListPol, #DropDownListVrsta {
+#DropDownListPol, #DropDownListVrsta, #DropDownListBrend {
     padding: 10px; /* Adjust padding as needed */
     margin: 10px; /* Adjust margin as needed */
     border: 1px solid #ccc; /* Add a border */

@@ -1,0 +1,90 @@
+﻿body, h1, h2, h3, h4, h5, h6, p, ul, ol, li, figure, figcaption, blockquote, dl, dd {
+    margin: 0;
+    padding: 0;
+    font-weight: normal;
+}
+
+/* Body styling */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+    padding: 20px;
+    line-height: 1.6;
+}
+
+/* DropDownList styling */
+asp:DropDownList {
+    width: 200px;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    background-color: #fff;
+    cursor: pointer;
+}
+
+    asp\\:DropDownList:focus {
+        border-color: #007bff;
+        box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+        outline: none;
+    }
+
+/* GridView styling */
+asp\\:GridView {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+    asp\\:GridView th {
+        background-color: #007bff;
+        color: #fff;
+        padding: 10px;
+        text-align: left;
+    }
+
+    asp\\:GridView td {
+        padding: 10px;
+        border: 1px solid #ddd;
+        background-color: #fff;
+    }
+
+    asp\\:GridView tr:nth-child(even) {
+        background-color: #f2f2f2;
+    }
+
+    asp\\:GridView tr:hover {
+        background-color: #e9ecef;
+    }
+
+    asp\\:GridView th, asp\\:GridView td {
+        border-bottom: 1px solid #ddd;
+    }
+
+    asp\\:GridView .aspNetDisabled {
+        color: #6c757d;
+    }
+
+    /* CommandField button styling */
+    asp\\:GridView .CommandField a {
+        display: inline-block;
+        padding: 5px 10px;
+        margin: 0 5px;
+        background-color: #007bff;
+        color: #fff;
+        text-decoration: none;
+        border-radius: 3px;
+        transition: background-color 0.3s;
+    }
+
+        asp\\:GridView .CommandField a:hover {
+            background-color: #0056b3;
+        }
+
+/* Ensure dropdown lists are displayed properly in all browsers */
+asp\\:DropDownList,
+asp\\:GridView {
+    display: block;
+}

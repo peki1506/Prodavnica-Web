@@ -13,7 +13,7 @@
     <form id="form1" runat="server">
         <div class="wrapper">
             <div class="header">
-                <h1>Welcome to the Admin Panel</h1>
+                <h1>Prodavnica sprtske garderobe</h1>
             </div>
 
             <div class="content">
@@ -22,7 +22,7 @@
             </div>
 
             <div class="footer">
-                <p>&copy; 2024 Admin Panel. All rights reserved.</p>
+                <p>&copy; 2024 Proizvodnja.</p>
             </div>
         </div>
     </form>

@@ -20,7 +20,7 @@ namespace Prodavnica_Web
             string email = txtEmail.Text.Trim();
             string lozinka = txtPassword.Text.Trim();
             Session["KorisnikID"] = Metode.KorisnikLogin(email, lozinka);
-
+            Response.Redirect("Prodavnica.aspx");
         }
     }
 }
