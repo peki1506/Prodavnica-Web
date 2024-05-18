@@ -77,8 +77,7 @@ namespace Prodavnica_Web
                     if (rowsAffected > 0)
                     {
                         string script = "UspesnaKupovina();";
-                        ScriptManager.RegisterStartupScript(this.Page, Page.GetType(), "UspesnaKupovinaScript", script, true);
-
+                        ScriptManager.RegisterStartupScript(this, GetType(), "UspesnaKupovinaScript", script, true);
                         Response.Redirect("Login.aspx");
                     }
                 }

@@ -42,15 +42,6 @@ namespace Prodavnica_Web
         protected global::System.Web.UI.WebControls.TextBox txtPassword;
 
         /// <summary>
-        /// chkTerms control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox chkTerms;
-
-        /// <summary>
         /// btnLogin control.
         /// </summary>
         /// <remarks>
