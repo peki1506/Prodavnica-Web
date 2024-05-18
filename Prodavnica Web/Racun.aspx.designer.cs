@@ -11,35 +11,8 @@ namespace Prodavnica_Web
 {
 
 
-    public partial class Prodavnica
+    public partial class Racun
     {
-
-        /// <summary>
-        /// DropDownListPol control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownListPol;
-
-        /// <summary>
-        /// DropDownListVrsta control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownListVrsta;
-
-        /// <summary>
-        /// DropDownListBrend control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownListBrend;
 
         /// <summary>
         /// GridView1 control.
@@ -51,12 +24,39 @@ namespace Prodavnica_Web
         protected global::System.Web.UI.WebControls.GridView GridView1;
 
         /// <summary>
-        /// Btn_Zavrsi control.
+        /// ukupno control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Btn_Zavrsi;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl ukupno;
+
+        /// <summary>
+        /// vreme control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl vreme;
+
+        /// <summary>
+        /// popust control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl popust;
+
+        /// <summary>
+        /// Btn_Plati control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button Btn_Plati;
     }
 }

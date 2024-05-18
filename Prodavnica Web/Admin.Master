@@ -14,17 +14,20 @@
         <div class="wrapper">
             <div class="header">
                 <h1>Prodavnica sprtske garderobe</h1>
-            </div>
-
-            <div class="content">
-                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
-                </asp:ContentPlaceHolder>
-            </div>
+                <div id="imePrezime" class="user-info" runat="server">
+                    <h2></h2>
+                </div>
 
             <div class="footer">
                 <p>&copy; 2024 Proizvodnja.</p>
             </div>
+            </div>
+            <div class="content">
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                </asp:ContentPlaceHolder>
+            </div>
         </div>
+
     </form>
 </body>
 </html>

@@ -30,5 +30,43 @@ namespace Prodavnica_Web
                 }
             }
         }
+        public static string KorisnikIme()
+        {
+            string Ime;
+            using (SqlConnection conn = Konekcija.Connect())
+            {
+                conn.Open();
+                string queryIme = "SELECT ime FROM klijenti WHERE id = @KorisnikID";
+                using (SqlCommand cmd = new SqlCommand(queryIme, conn))
+                {
+                    cmd.Parameters.AddWithValue("@KorisnikID", Convert.ToInt16(HttpContext.Current.Session["KorisnikID"]));
+                    object result = cmd.ExecuteScalar();
+                    if (result == null)
+                        Ime = "ime";
+                    else
+                        Ime = result.ToString();
+                }
+                return Ime;
+            }
+        }
+        public static string KorisnikPrezime()
+        {
+            string Prezime;
+            using (SqlConnection conn = Konekcija.Connect())
+            {
+                conn.Open();
+                string queryPrezime = "SELECT prezime FROM klijenti WHERE id = @KorisnikID";
+                using (SqlCommand cmd = new SqlCommand(queryPrezime, conn))
+                {
+                    cmd.Parameters.AddWithValue("@KorisnikID", Convert.ToInt16(HttpContext.Current.Session["KorisnikID"]));
+                    object result = cmd.ExecuteScalar();
+                    if (result == null)
+                        Prezime = "Prezime";
+                    else
+                        Prezime = result.ToString();
+                }
+                return Prezime;
+            }
+        }
     }
 }

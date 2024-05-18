@@ -9,6 +9,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Diagnostics;
 using System.Text;
+using System.Net.NetworkInformation;
 
 namespace Prodavnica_Web
 {
@@ -16,14 +17,48 @@ namespace Prodavnica_Web
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            SqlConnection veza = Konekcija.Connect();
+            veza.Open();
             if (!IsPostBack)
             {
                 DropDownListPolPopulate();
+                popuniRacun(GetCurrentRacunID(veza) + 1, DateTime.Now, getKlijentID(veza));
             }
+        }
+        private int getKlijentID(SqlConnection veza)
+        {
+            int klijentID = 1;
+            string query = "SELECT id FROM klijenti WHERE ime = @ime AND prezime = @prezime ";
+            using (SqlCommand command = new SqlCommand(query, veza))
+            {
+                command.Parameters.AddWithValue("@ime", Metode.KorisnikIme());
+                command.Parameters.AddWithValue("@prezime", Metode.KorisnikPrezime());
+                SqlDataReader reader = command.ExecuteReader();
+                if (reader.Read())
+                {
+                    klijentID = Convert.ToInt32(reader["id"]);
+                }
+                reader.Close();
+            }
+            return klijentID;
+        }
+        private void popuniRacun(int racunID, DateTime datum, int klijentID)
+        {
+            string query = "INSERT INTO racun (id, datum, id_klijenta, gotovo) VALUES (@RacunID, @Datum, @KlijentID, @gotovo)";
+            SqlConnection veza = Konekcija.Connect();
+            veza.Open();
+            using (SqlCommand command = new SqlCommand(query, veza))
+            {
+                command.Parameters.AddWithValue("@RacunID", racunID);
+                command.Parameters.AddWithValue("@Datum", DateTime.Now);
+                command.Parameters.AddWithValue("@KlijentID", klijentID);
+                command.Parameters.AddWithValue("@gotovo", 0);
+                command.ExecuteNonQuery();
+            }
+            veza.Close();
         }
         private void DropDownListPolPopulate()
         {
-            //DropDownList1.Items.Insert(0, new ListItem("Odaberi pol", ""));
 
             using (SqlConnection conn = Konekcija.Connect())
             {
@@ -110,7 +145,7 @@ namespace Prodavnica_Web
         {
             if (!string.IsNullOrEmpty(DropDownListPol.SelectedValue))
             {
-                DataGridPopulate();// Call your method to populate cmb_vrsta
+                DataGridPopulate();
             }
         }
         private void DataGridPopulate()
@@ -147,8 +182,13 @@ namespace Prodavnica_Web
             SqlConnection veza = Konekcija.Connect();
             veza.Open();
 
-            string artikalId = GridView1.SelectedRow.Cells[0].Text;
-            string kolicina = GridView1.SelectedRow.Cells[7].Text;
+            // Ensure the cell indexes are correct
+            // ID is the first column (index 0), which is hidden, hence retrieval via DataKeys
+            string artikalId = GridView1.DataKeys[GridView1.SelectedRow.RowIndex].Values["ID"].ToString();
+
+            // kolicina is in the eighth column (index 7)
+            string kolicina = GridView1.DataKeys[GridView1.SelectedRow.RowIndex].Values["kolicina"].ToString();
+
 
             StringBuilder naredba = new StringBuilder("INSERT INTO racun_stavke (kolicina, cena, id_magacina, id_artikla, id_racuna) ");
             naredba.Append(" VALUES (@Kolicina, @Cena, @MagacinID, @ArtikalID, @RacunID)");
@@ -160,13 +200,13 @@ namespace Prodavnica_Web
             //popuniRacun(GetCurrentRacunID(veza)+1, DateTime.Now);
             adapter.SelectCommand.Parameters.AddWithValue("@RacunID", GetCurrentRacunID(veza));
             adapter.SelectCommand.ExecuteNonQuery();
-
+            
             StringBuilder naredba3 = new StringBuilder("UPDATE lager SET kolicina = @Kolicina WHERE id_artikla = @ArtikalID");
             SqlDataAdapter adapter3 = new SqlDataAdapter(naredba3.ToString(), veza);
             adapter3.SelectCommand.Parameters.AddWithValue("@Kolicina", Convert.ToInt32(kolicina) - 1);
             adapter3.SelectCommand.Parameters.AddWithValue("@ArtikalID", Convert.ToInt32(artikalId));
             adapter3.SelectCommand.ExecuteNonQuery();
-
+            
             DataGridPopulate();
         }
         private int GetCurrentRacunID(SqlConnection veza)
@@ -181,6 +221,11 @@ namespace Prodavnica_Web
             {
                 return 0;
             }
+        }
+
+        protected void Btn_Zavrsi_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Racun.aspx");
         }
     }
 }

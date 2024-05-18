@@ -1,9 +1,4 @@
-﻿/* Resetting default margin and padding */
-body, h1, h2, h3, p, ul, li {
-    margin: 0;
-    padding: 0;
-}
-.wrapper{
+﻿.wrapper {
     /*margin-top: 77.6px;*/
     margin-bottom: 38.4px;
 }

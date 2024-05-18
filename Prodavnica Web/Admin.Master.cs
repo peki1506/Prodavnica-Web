@@ -11,7 +11,7 @@ namespace Prodavnica_Web
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            imePrezime.InnerText = Metode.KorisnikIme() + " " + Metode.KorisnikPrezime();
         }
     }
 }

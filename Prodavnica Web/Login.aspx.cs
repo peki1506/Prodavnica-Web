@@ -10,6 +10,8 @@ namespace Prodavnica_Web
 {
     public partial class WebForm1 : System.Web.UI.Page
     {
+        //static public string user_ime = "";
+        //static public string user_prezime = "";
         protected void Page_Load(object sender, EventArgs e)
         {
 
